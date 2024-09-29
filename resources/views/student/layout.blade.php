@@ -227,33 +227,57 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('student.logout')}}" class="nav-link">
-                                {{-- <i class="nav-icon fas fa-th"></i> --}}
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+
+                                <p>
+                                    Password Manager
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('student.changePassword')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Change Password</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+
                                 <p>
                                     Logout
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
-                        </li>
-                            <a href="{{route('student.changePassword')}}" class="nav-link">
-                                {{-- <i class="nav-icon fas fa-th"></i> --}}
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('student.logout')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Logout</p>
+                                    </a>
+                                </li>
 
-                                {{-- <i class="far fa-circle nav-icon"></i> --}}
-                                <p>
-                                    Change Password
-                                </p>
-                            </a>
+                            </ul>
+
+
                         </li>
+
+
 
 
 
 
                     </ul>
 
-                    </li>
 
 
-                    </ul>
                 </nav>
 
             </div>

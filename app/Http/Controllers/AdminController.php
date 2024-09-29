@@ -20,7 +20,10 @@ class AdminController extends Controller
         Auth::guard('admin')->logout();
         return redirect()->route('admin.login')->with('success', 'Logged out successfully!');
     }
-
+    public function changePassword()
+    {
+        return view('student.changePassword');
+    }
     public function authenticate(Request $req)
     {
         //checks the required data and sends the error message tologin i not filled.
