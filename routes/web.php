@@ -14,7 +14,7 @@ Route::get('/', function () {
 
 
 
-Route::group(['prefix' => 'student'], function () {
+Route::group(['prefix' => 'admin'], function () {
     ///guest
     Route::group(['middleware' => 'guest'], function () {
         //
@@ -38,7 +38,7 @@ Route::group(['prefix' => 'student'], function () {
 //for middleware the code is added inside bootstrap/cache/app
 //for middleware initialization code is added in app/Http/Middleware
 //GO THrough these middleware.
-Route::group(['prefix' => 'teacher'], function () {
+Route::group(['prefix' => 'staff'], function () {
     Route::group(['middleware' => 'teacher.guest'], function () {
         Route::get('login', [TeacherController::class, 'login'])->name('teacher.login');
         Route::post('authenticate', [TeacherController::class, 'authenticate'])->name('teacher.authenticate');
@@ -53,7 +53,7 @@ Route::group(['prefix' => 'teacher'], function () {
     });
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'superadmin'], function () {
     Route::group(['middleware' => 'admin.guest'], function () {
         Route::get('login', [AdminController::class, 'index'])->name('admin.login');
         Route::get('register', [AdminController::class, 'register'])->name('admin.register');
@@ -87,12 +87,12 @@ Route::group(['prefix' => 'admin'], function () {
 
 
         //Teacher Route
-        Route::get('teacher/create', [TeacherController::class, 'index'])->name('teacher.create');
-        Route::post('teacher/store', [TeacherController::class, 'store'])->name('teacher.store');
-        Route::get('teacher/read', [TeacherController::class, 'read'])->name('teacher.read');
-        Route::get('teacher/edit/{id}', [TeacherController::class, 'edit'])->name('teacher.edit');
-        Route::put('teacher/update/{id}', [TeacherController::class, 'update'])->name('teacher.update');
-        Route::delete('teacher/delete/{id}', [TeacherController::class, 'delete'])->name('teacher.delete');
+        Route::get('staff/create', [TeacherController::class, 'index'])->name('teacher.create');
+        Route::post('staff/store', [TeacherController::class, 'store'])->name('teacher.store');
+        Route::get('staff/read', [TeacherController::class, 'read'])->name('teacher.read');
+        Route::get('staff/edit/{id}', [TeacherController::class, 'edit'])->name('teacher.edit');
+        Route::put('staff/update/{id}', [TeacherController::class, 'update'])->name('teacher.update');
+        Route::delete('staff/delete/{id}', [TeacherController::class, 'delete'])->name('teacher.delete');
 
 
 
@@ -100,11 +100,11 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-        Route::get('student/create', [StudentController::class, 'index'])->name('student.create');
-        Route::post('student/store', [StudentController::class, 'store'])->name('student.store');
-        Route::get('student/read', [StudentController::class, 'read'])->name('student.read');
-        Route::get('student/edit/{id}', [StudentController::class, 'edit'])->name('student.edit');
-        Route::put('student/update/{id}', [StudentController::class, 'update'])->name('student.update');
-        Route::delete('student/delete/{id}', [StudentController::class, 'delete'])->name('student.delete');
+        Route::get('admin/create', [StudentController::class, 'index'])->name('student.create');
+        Route::post('admin/store', [StudentController::class, 'store'])->name('student.store');
+        Route::get('admin/read', [StudentController::class, 'read'])->name('student.read');
+        Route::get('admin/edit/{id}', [StudentController::class, 'edit'])->name('student.edit');
+        Route::put('admin/update/{id}', [StudentController::class, 'update'])->name('student.update');
+        Route::delete('admin/delete/{id}', [StudentController::class, 'delete'])->name('student.delete');
     });
 });

@@ -432,7 +432,7 @@
                                                     alt="School Logo" class="brand-image img-circle elevation-3"
                                                     style="opacity: .8">
                                                 <span class="brand-text font-weight-light"><b
-                                                        style="font-family: cursive">Schoool Management</b></span>
+                                                        style="font-family: cursive">Multi Admins Management</b></span>
                                             </a>
 
                                             <div class="sidebar">
@@ -468,8 +468,7 @@
                                                                 <i class="nav-icon fas fa-th"></i>
                                                                 <p>
                                                                     Dashboard
-                                                                    <span
-                                                                        class="right badge badge-danger">Teacher</span>
+                                                                    <span class="right badge badge-danger">Staff</span>
                                                                 </p>
                                                             </a>
                                                         </li>
@@ -522,7 +521,7 @@
         @yield('content')
 
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io/">School Management</a>.</strong>
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io/">Multi Admins</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0

@@ -226,7 +226,7 @@
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Dashboard
-                                    <span class="right badge badge-danger">Admin</span>
+                                    <span class="right badge badge-danger">Super Admin</span>
                                 </p>
                             </a>
                         </li>
