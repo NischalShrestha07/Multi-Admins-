@@ -1,4 +1,4 @@
-@extends('student.layout')
+@extends('teacher.layout')
 @section('customCss')
 <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 
@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('student.dashboard') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('teacher.dashboard') }}">Home</a></li>
                         <li class="breadcrumb-item active">Change Password</li>
                     </ol>
                 </div>
@@ -51,7 +51,7 @@
                             </div>
                             @endif
 
-                            <form action="{{ route('student.updatePassword') }}" method="POST">
+                            <form action="{{ route('teacher.updatePassword') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="oldPassword">Old Password</label>

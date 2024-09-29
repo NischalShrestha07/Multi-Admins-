@@ -14,6 +14,33 @@ class TeacherController extends Controller
         return view('admin.teacher.form');
     }
 
+    public function changePassword()
+    {
+        return view('student.changePassword');
+    }
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'oldPassword' => 'required',
+            'newPassword' => 'required',
+            'confirmPassword' => 'required|same:newPassword',
+            //confirmPassword should mactch with newPassword
+
+        ]);
+        $oldPassword = $request->oldPassword;
+        $newPassword = $request->newPassword;
+        $user = User::find(Auth::user()->id); //find user
+        // dd($user);
+
+        if (Hash::check($oldPassword, $user->password)) { //checked wheather the password is correct or not
+
+            $user->password = $newPassword;
+            $user->update();
+            return redirect()->back()->with('success', 'Password Changed Successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Old Password Does not match.');
+        }
+    }
 
 
 

@@ -47,7 +47,8 @@ Route::group(['prefix' => 'teacher'], function () {
     Route::group(['middleware' => 'teacher.auth'], function () {
         Route::get('dashboard', [TeacherController::class, 'dashboard'])->name('teacher.dashboard');
         Route::get('register', [TeacherController::class, 'register'])->name('teacher.register');
-
+        Route::get('changePassword', [TeacherController::class, 'changePassword'])->name('teacher.changePassword');
+        Route::post('updatePassword', [TeacherController::class, 'updatePassword'])->name('teacher.updatePassword');
         Route::get('logout', [TeacherController::class, 'logout'])->name('teacher.logout');
     });
 });
@@ -63,7 +64,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('logout', [AdminController::class, 'logout'])->name('admin.logout');
 
         Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-
+        Route::get('changePassword', [AdminController::class, 'changePassword'])->name('admin.changePassword');
+        Route::post('updatePassword', [AdminController::class, 'updatePassword'])->name('admin.updatePassword');
         Route::get('form', [AdminController::class, 'form'])->name('admin.form');
 
         Route::get('table', [AdminController::class, 'table'])->name('admin.table');
